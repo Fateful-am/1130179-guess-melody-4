@@ -1,7 +1,7 @@
 # Учебный проект «Угадай мелодию» [![Build status][travis-image]][travis-url]
 
 * Студент: [Алексей Мальцев](https://up.htmlacademy.ru/react/4/user/1130179).
-* Наставник: `Неизвестно`.
+* Наставник: [Илья Шайна](https://htmlacademy.ru/profile/id1517699).
 
 ---
 
