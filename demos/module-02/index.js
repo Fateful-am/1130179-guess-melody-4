@@ -17,9 +17,9 @@ ReactDOM.render(
     <Albums
       albums={albums}
       band={band}
-    // genre={genre}
-    // albumsCount={albumsCount}
-    // singer={singer}
+      // genre={genre}
+      // albumsCount={albumsCount}
+      // singer={singer}
     />,
     document.querySelector(`#root`)
 );

@@ -15,3 +15,6 @@ node_modules/
 
 public/bundle.js
 public/bundle.js.map
+
+demos/module-02/public/bundle.js
+demos/module-02/public/bundle.js.map.js
