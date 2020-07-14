@@ -3,8 +3,10 @@ import PropTypes from "prop-types";
 import {Switch, Route, BrowserRouter} from "react-router-dom";
 import {connect} from "react-redux";
 import {ActionCreator} from "../../reducer/game/game.js";
+import {AuthorizationStatus} from "../../reducer/user/user.js";
 import WelcomeScreen from "../welcome-screen/welcome-screen.jsx";
 import ArtistQuestionScreen from "../artist-question-screen/artist-question-screen.jsx";
+import AuthScreen from "../auth-screen/auth-screen.jsx";
 import GameScreen from "../game-screen/game-screen.jsx";
 import GenreQuestionScreen from "../genre-question-screen/genre-question-screen.jsx";
 import GameOverScreen from "../game-over-screen/game-over-screen.jsx";
@@ -23,6 +25,8 @@ const ArtistQuestionScreenWrapped = withActivePlayer(ArtistQuestionScreen);
 class App extends PureComponent {
   _renderGameScreen() {
     const {
+      authorizationStatus,
+      login,
       maxMistakes,
       mistakes,
       questions,
@@ -51,13 +55,24 @@ class App extends PureComponent {
     }
 
     if (step >= questions.length) {
-      return (
-        <WinScreen
-          questionsCount={questions.length}
-          mistakesCount={mistakes}
-          onReplayButtonClick={resetGame}
-        />
-      );
+      if (authorizationStatus === AuthorizationStatus.AUTH) {
+        return (
+          <WinScreen
+            questionsCount={questions.length}
+            mistakesCount={mistakes}
+            onReplayButtonClick={resetGame}
+          />
+        );
+      } else if (authorizationStatus === AuthorizationStatus.NO_AUTH) {
+        return (
+          <AuthScreen
+            onReplayButtonClick={resetGame}
+            onSubmit={login}
+          />
+        );
+      }
+
+      return null;
     }
 
     if (question) {
@@ -109,6 +124,12 @@ class App extends PureComponent {
             <GenreQuestionScreenWrapped
               question={questions[0]}
               onAnswer={() => {}}
+            />
+          </Route>
+          <Route exact path="/dev-auth">
+            <AuthScreen
+              onReplayButtonClick={() => {}}
+              onSubmit={() => {}}
             />
           </Route>
         </Switch>
