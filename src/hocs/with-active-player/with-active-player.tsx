@@ -34,7 +34,6 @@ const withActivePlayer = (Component) => {
     }
   }
 
-  WithActivePlayer.propTypes = {};
 
   return WithActivePlayer;
 };
