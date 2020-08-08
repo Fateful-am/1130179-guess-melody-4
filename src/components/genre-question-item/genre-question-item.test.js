@@ -1,6 +1,6 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import GenreQuestionItem from "./genre-question-item.jsx";
+import GenreQuestionItem from "./genre-question-item.tsx";
 
 
 const answer = {

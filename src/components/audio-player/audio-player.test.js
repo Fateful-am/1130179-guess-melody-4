@@ -1,7 +1,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import AudioPlayer from './audio-player.jsx';
+import AudioPlayer from './audio-player.tsx';
 
 const mock = {
   song: {
