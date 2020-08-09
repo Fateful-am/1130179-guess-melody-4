@@ -26,7 +26,8 @@ const withUserAnswer = (Component) => {
   type P = React.ComponentProps<typeof Component>;
   type T = Props & Subtract<P, InjectedProps>;
 
-  class WithUserAnswer extends React.PureComponent<T, State> {    constructor(props) {
+  class WithUserAnswer extends React.PureComponent<T, State> {
+    constructor(props) {
       super(props);
 
       this.state = {

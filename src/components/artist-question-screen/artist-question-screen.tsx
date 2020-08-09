@@ -41,7 +41,7 @@ const ArtistQuestionScreen: React.FunctionComponent<Props> = (props: Props) => {
       </form>
     </section>
   );
-}
+};
 
 
 export default ArtistQuestionScreen;

@@ -14,7 +14,8 @@ interface Props {
   mistakes: number;
 }
 
-const GameScreen: React.FunctionComponent<Props> = (props: Props) => {  const {
+const GameScreen: React.FunctionComponent<Props> = (props: Props) => {
+  const {
     type,
     children,
     goToWelcome,
@@ -47,7 +48,6 @@ const GameScreen: React.FunctionComponent<Props> = (props: Props) => {  const {
     </section>
   );
 };
-
 
 
 const mapStateToProps = (state) => ({

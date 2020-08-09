@@ -6,7 +6,8 @@ interface Props {
   onReplayButtonClick: () => void;
 }
 
-const GameOverScreen: React.FunctionComponent<Props> = (props: Props) => {  const {onReplayButtonClick} = props;
+const GameOverScreen: React.FunctionComponent<Props> = (props: Props) => {
+  const {onReplayButtonClick} = props;
 
   return (
     <section className="result">
